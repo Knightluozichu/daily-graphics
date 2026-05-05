@@ -39,7 +39,7 @@
     - 改 position
   - processMouseMovement(dx, dy)
     - 屏幕 delta
-    - yaw += dx * sens, pitch += dy * senes, 必要时夹pitch 到[-89,89],再 updateCameraVectors（）
+    - yaw += dx * sens, pitch += dy * sens, 必要时夹pitch 到[-89,89],再 updateCameraVectors（）
     - 改 yaw、pitch + 三个轴
   - processMouseScroll（dy）
     - 滚轮 delta
@@ -50,7 +50,7 @@
     - 当前的 yaw、pitch、worldUp
   - 输出：
     - 刷新 front、right、up
-    - front.x = cos(radians(yaw)) * cose(radians(pitch))
+    - front.x = cos(radians(yaw)) * cos(radians(pitch))
     - front.y = sin(radians(pitch))
     - front.z = sin(radians(yaw)) * cos(radians(pitch))
     - front = normalize(front)
@@ -188,7 +188,7 @@ vs 光源位置，fs 返回颜色
 ### 基础光照模型的公式
 
 #### ambient
-ambientColor = ambientStrength * objectColor
+ambientColor = ambientStrength * lightColor
 #### diffuse
 n = normalize(Normal)
 l = normalize(LightPos - FragPos)
